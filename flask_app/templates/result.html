@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Tumblbug 크라우드펀딩 펀딩성공확률 예측하기</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/mdb.min.css')}}" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}"" />
+</head>
+<body>
+      <!--Main Navigation-->
+  <header>
+    <style>
+      /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+      
+      .carousel-item:nth-child(1) {
+        background-image: url('https://www.tumblbug.com/wpa/dabb26ec110984e82ebaec18aacadd2c.jpg');
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: center center; 
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: url('https://tumblbug-assets.imgix.net/assets/ProjectStart/creators.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="https://tumblbug.com/">
+          <strong>Tumblbug</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#intro">Home</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav list-inline">
+            <!-- Icons -->
+            <li class="">
+              <a class="nav-link" href="https://tumblbug.com/collections/youtubecreators" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="">
+              <a class="nav-link" href="https://www.facebook.com/tumblbug" rel="nofollow" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://twitter.com/tumblbug" rel="nofollow" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/tumblbug/" rel="nofollow" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Carousel wrapper -->
+    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+      </ol>
+
+      <!-- Inner -->
+      <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1 class="mb-3">텀블벅 프로젝트 테스트</h1>
+                <br>
+                <h5 class="mb-4">크라우드펀딩으로 프로젝트를 위한 자금도 모으고,
+                  든든한 후원자 네트워크도 확보할 수 있습니다.</h5>
+                <a class="btn btn-outline-light btn-lg m-2" href="https://tumblbug.com/login?redirection=/start?authorized=true"
+                  role="button" rel="nofollow" target="_blank">지금 시작</a>
+                <a class="btn btn-outline-light btn-lg m-2" href="https://creator.tumblbug.com/"
+                  target="_blank" role="button">창작자 가이드</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h2>텀블벅에서 펀딩에 성공한 20,300개 프로젝트와 함께 하세요.</h2>
+                <br>
+                <h4>디자인, 영화, 게임, 출판, 요리, 패션, 이벤트 …</h4>
+                <br>
+                <h4>분야를 가릴 것 없이 수많은 창작자와 창업자들의 프로젝트들이 매일같이 올라오는 텀블벅은 한국에서 가장 활성화된 크라우드펀딩 커뮤니티입니다.</h4>
+                <h4>지금껏 20,300개 넘는 창조적인 시도들이 120만 명의 후원자를 만나 세상에 나왔습니다.</h4>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+          <div class="mask" style="
+                background: linear-gradient(
+                  45deg,
+                  rgba(29, 236, 197, 0.7),
+                  rgba(91, 14, 214, 0.7) 100%
+                );
+              ">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <h1>새로운 프로젝트를 위해 확인하세요</h1>
+                <a class="btn btn-outline-light btn-lg m-2"
+                  href="https://help.tumblbug.com/hc/ko/articles/360052346633-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%AC%EC%82%AC-%EA%B8%B0%EC%A4%80" target="_blank" role="button">프로젝트 심사 기준</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Inner -->
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Carousel wrapper -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="yellow">
+              <img src="https://tumblbug.com/wpa/38662a9e005ed052f24d4f6f78cc200e.png" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(255, 135, 135, 0.582);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>텀블벅 뉴스레터 구독</strong></h4>
+            <p class="text-muted">
+              불가능의 0%가 아닌 무한한 가능성의 0%에 관한 이야기를 매주 토요일 아침에 만나보세요.
+            </p>
+            <a class="btn btn-outline-light btn-lg m-2" href="https://page.stibee.com/subscriptions/52647?groupIds=92507"
+                  role="button" rel="nofollow" style="background-color: rgba(255, 135, 135, 0.582)" _blank">구독하기</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+      <section class="text-center">
+        <h4 class="mb-5"><strong>진행중인 기획전</strong></h4>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://tumblbug-cci.imgix.net/58b95b10-c4eb-46f4-b14f-dea9a8f9f922/c826e679-bab7-4a10-b8db-3a6746012831.png?auto=format%2Ccompress&fit=crop&h=465&lossless=true&w=465&s=9c104842abc8a3e106c20ef17268c3fc" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">한글</h5>
+                <p class="card-text">
+                  한국시 번역의 풍요로움을 들려주기 위해 뭉친 한영 번역가들, 한 음절로도 다양한 소리를 만드는 한글의 원리를 독특한 디자인으로 구현한 책 프로젝트를 보며 한글날을 의미 있게 기념해보세요.
+                </p>
+                <a href="https://tumblbug.com/collections/hanguelday" class="btn btn-primary">들어갑니다</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://tumblbug-cci.imgix.net/14af1c78-2cc4-4a94-b22d-6b3f355e2097/4985ade3-83aa-4df1-80f7-b8823a976f11.jpg?auto=format%2Ccompress&fit=crop&h=465&lossless=true&w=465&s=c5570d30daec2a53106c81c77aeda76b" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">영남에만 있데이</h5>
+                <p class="card-text">
+                  로컬 크리에이터 기획전 '방방곡곡'의 두번째 지역은 영남입니다. 한국에서 가장 큰 면적을 차지하고 있는만큼 가지각색 영남의 다양한 모습을 조망한 프로젝트를 소개합니다. 본 기획전은 중소벤처기업부와 창업진흥원이 함께합니다.
+                </p>
+                <a href="https://tumblbug.com/collections/local-youngnam" class="btn btn-primary">들어간데이</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://tumblbug-cci.imgix.net/5dc2b811-fea0-48be-bbda-a3db6652b8f4/2dcceb8d-3b9f-479d-8bbd-9f3c0dd907d4.png?auto=format%2Ccompress&fit=crop&h=465&lossless=true&w=465&s=90789cddb3f80084c63c1065b39e8aef" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">초년생</h5>
+                <p class="card-text">
+                  낯선 환경에 막 첫발을 내디딘 초년생을 위한 참고 자료. 실무에 도움이 될 가이드북부터 7년간 ‘덕업일치’ 해온 경험을 담아낸 스토리북까지. 용기를 북돋아주는 프로젝트를 모았습니다.
+                </p>
+                <a href="https://tumblbug.com/collections/beginner" class="btn btn-primary">Enter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+      <section class="mb-5">
+        <h4 class="mb-5 text-center"><strong>나의 프로젝트의 성공확률은?</strong></h4>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6">
+            <h2>프로젝트 성공확률 : {{data[0]*100}}% </h2>
+
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+      <p>Follow tumblbug on social media</p>
+      <a href="https://tumblbug.com/collections/youtubecreators" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/tumblbug" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/tumblbug" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/tumblbug/" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-dark" href="https://tumblbug.com/">tumblbug/thogood212.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+    <!-- MDB -->
+    <script type="text/javascript" src="{{url_for('static', filename = '/js/mdb.min.js')}}"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="{{url_for('static', filename = '/js/script.js')}}"></script>
+</body>
+</html>
